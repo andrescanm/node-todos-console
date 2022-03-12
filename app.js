@@ -13,7 +13,7 @@ const main = async () => {
                 tasks.createTask(description);
                 break;
             case '2':
-                console.log(tasks._list);
+                console.log(tasks.listTasksAsArray);
                 break;
         }
         if (option !== 0) await pauseMenu();
