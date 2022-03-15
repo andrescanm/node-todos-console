@@ -1,7 +1,6 @@
 require('colors');
 
 const showMenu = () => {
-    console.clear();
     return new Promise((resolve, reject) => {
         console.log('========================'.green);
         console.log('    Select an Option');

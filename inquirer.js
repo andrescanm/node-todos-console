@@ -48,7 +48,6 @@ const pauseInquierer = [
 ]
 
 const inquirerMenu = async () => {
-    console.clear();
     console.log('========================'.green);
     console.log('    Select an Option');
     console.log('========================\n'.green);

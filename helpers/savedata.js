@@ -1,8 +1,14 @@
 const fs = require('fs');
 
-const saveData = (data)=>{
-    const file = './db/data.json';
+const file = './db/data.json';
+
+const saveData = (data) => {
     fs.writeFileSync(file, JSON.stringify(data));
 }
 
-module.exports = {saveData}
+const readFile = () => {
+    if (!fs.existsSync(file)) return null;
+    return fs.readFileSync(file, { encoding: 'utf-8' });
+}
+
+module.exports = { saveData, readFile }
