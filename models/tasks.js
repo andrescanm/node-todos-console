@@ -52,6 +52,21 @@ class Tasks {
         });
     }
 
+    toggleCompletedTask(ids = []) {
+        ids.forEach((id)=>{
+            const taskToToggle = this._list[id];
+            if(!taskToToggle.completedAt) {
+                taskToToggle.completedAt = new Date().toISOString();
+            }
+        });
+
+        this.listTasksAsArray.forEach((task)=>{
+            if (!ids.includes(task.id)) {
+                this._list[task.id].completedAt = null;
+            }
+        });
+    }
+
     deleteTask(id = '') {
         if (this._list[id]) {
             delete this._list[id];
